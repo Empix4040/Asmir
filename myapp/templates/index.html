@@ -1,0 +1,469 @@
+
+<!DOCTYPE HTML>
+{% load static %}
+<html>
+
+<head>
+	
+	<title>Rafting Adrenaline</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+	<link rel="stylesheet" href="{% static 'website/assets/css/main.css' %}"/>
+	<noscript>
+		<link rel="stylesheet" href="{% static 'website/assets/css/noscript.css'%} "/>
+	</noscript>
+</head>
+
+<body class="landing is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt">
+			<h1><a href="#">Rafting Adrenaline</a></h1>
+			<nav id="nav">
+				<ul>
+					<li class="special">
+						<a  href="#menu" class="menuToggle"><span>Reserve now</span></a>
+						<div id="menu" style="background-color:#21b2a66e;">
+							<ul>
+								<li><a href= "#two" class = "more scrolly">Apartment</a></li>
+								<li><a href="#three" class = "more scrolly">Quad Advantures</a></li>
+								<li><a href="#four" class = "more scrolly">Rafting</a></li>
+								
+								<li></li>
+								<p></p>
+								<p></p>
+								<li><h1>call us now</h1></li>
+								
+								<li> <a  href="tel:+387 62 030 616">{{PhoneDigits}}</a></li>
+								<li></li>
+							</ul> 		
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<!-- Banner -->
+
+
+			<section id="banner">
+				<div class="inner">
+					<h2>{{MainTitle}}</h2>
+					<p>{{SmallTitle}}<br />
+						{{MainDescription}}</p>
+				
+				</div>
+				<a href="#one" class="more scrolly">Learn More</a>
+			</section>
+		 
+		<!-- One -->
+		<section id="one" class="wrapper style1 special  " >
+			<div class="inner">
+				<header class="major">
+					<h2>Watch our promo video<br />
+						you will see why we are the best</h2>
+						<iframe width="760" height="450" src="https://www.youtube.com/embed/laQUUMrn0GM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</header>
+				<ul class="icons major">
+					<li><span class="icon solid fa-anchor major style1" style = "background-color: #2e38427a;"><span class="label"></span></span></li>
+					<li><span class="icon solid fa-bed major style2" style = "background-color: #2e38427a;"><span class="label"></span></span></li>
+					<li><span class="icon solid fa-hiking major style3" style = "background-color: #2e38427a;"><span class="label"></span></span></li>
+				</ul>
+			</div>
+		</section>
+
+		<!-- Two -->
+		<section id="two" class="wrapper alt style2">
+			<section class="spotlight">
+				<div class="image"><img src="{% static 'website/images/pansionNeretva.jpg'%}" alt="" /></div>
+				<div class="content">
+					<h2>{{PansionTitle}}</h2>
+					<a href="pansion.html"><h3><u>{{PansionOpenGallery}}</u></h3></a>
+					<p>{{PansionContent}}</p>
+				</div>
+			</section>
+			<section  id = "three" class="spotlight">
+				<div class="image"><img src="{% static 'website/images/quadAdvanture.jpg'%}" alt="" /></div>
+				<div class="content">
+					<h2>{{QuadTitle}}</h2>
+						<a href="quad.html"><h3><u>{{QuadOpenGallery}}</u></h3></a>
+					<p>{{QuadContent}}</p>
+				</div>
+			</section>
+			<section id = "four" class="spotlight",class= "rafting">
+				<div class="image"><img src="{% static 'website/images/River-Rafting.jpg'%}" alt="" /></div>
+				<div class="content">
+					<h2>{{RaftingTitle}}</h2>
+						<a href="rafting.html"><h3><u>{{RaftingOpenGallery}}</u></h3></a>
+					<p>{{RaftingContent}}</p>
+				</div>
+			</section>
+		</section>
+
+		<!-- Three -->
+		<section id="three" class="wrapper style3 special">
+			<div class="inner">
+				<header class="major">
+					<h2>{{MiddleSectionTitle}}</h2>
+					<h5>{{MiddleSectionContent}}</h5>
+				</header>
+				<ul class="features">
+					<li  style="background-color: #2e38428c; border-style: inset;  border: 5px solid #2e3842;
+					border-radius: 5px;"class="icon solid fa-water">
+						<h3>{{FirstOfferTitle}}</h3>
+						<p >{{FirstOfferContent1}}<br>
+							{{FirstOfferContent2}}<br>
+							{{FirstOfferContent3}}<br>
+							{{FirstOfferContent4}}<br>
+							{{FirstOfferContent5}}<br>
+							{{FirstOfferContent6}}<br>
+							{{FirstOfferContent7}}<br>
+							{{FirstOfferContent8}}<br>
+							
+
+						</p>			<h1 style="text-align: right;margin-right: auto; margin-bottom: 30px; font-size: 30px; font-weight: bold;;">{{FirstOfferPrice}}&euro;</h1>
+						<div id="modalTwo" class="modal">
+							<div class="modal-content">
+							  <div class="contact-form">
+								<a class="close">&times;</a>
+								<form action="{% url 'home' %}" method="post">
+									{% csrf_token %}
+								  <h2>Book Now</h2>
+								  <div>
+									<input class="fname" type="text" name="Full_Name" placeholder="Full name"required>
+									<input type="text" name="Email" placeholder="Email" required>
+									<input type="text" name="Phone_Number" placeholder="Phone number" required><br>
+									<p>Select a activity</p>
+									<select style = "color:rgb(0, 0, 0)" name="Activity" id="Activity" required>
+										
+										<option value="Pansion_Neretva">Pansion Neretva</option>
+										<option value="Quad_Advantures">Quad Advantures</option>
+										<option value="Rafting_With_Breakfast" selected>Rafting with breakfast</option>
+										<option value="Rafting_With_Lunch">Rafting with breakfast and lunch</option>
+										<option value="Mini_rafting">Mini Rafting</option>
+										
+									  </select><br>
+									<p>please enter for how many people you are reserving</p>
+									<input style = "color:rgb(80, 79, 79)"type="number" id="number_of_people" name="number_of_people"min="1"required>
+									<label for="arrival">arrival:</label>
+									<input style = "color:rgb(80, 79, 79)"type="date" id="arrival" name="arrival" required>
+								  </div>
+								  <span>Message</span>
+								  <div>
+									<textarea  name= "message" id="message"rows="2"></textarea>
+								  </div>
+								  <button type="submit">Submit</button>
+								</form>
+							  </div>
+							</div>
+						  </div>
+						  <a class="button fit primary" href="rafting.html">Open Gallery</a>
+							<a class="button fit primary" data-modal="modalTwo">Book now</a> 
+						
+					</li>
+					<li  style=" background-color: #2e38428c; border-style: inset;  border: 5px solid #2e3842;
+					border-radius: 5px;"class="icon  solid fa-water">
+						<h3>{{SecondOfferTitle}}</h3>
+						<p >{{SecondOfferContent1}}<br>
+							{{SecondOfferContent2}}t <br>
+							{{SecondOfferContent3}} <br>
+							{{SecondOfferContent4}} <br>
+							{{SecondOfferContent5}} <br>
+							{{SecondOfferContent6}}<br>
+							{{SecondOfferContent7}} <br>
+							{{SecondOfferContent8}}
+						</p>			<h1 style="text-align: right;margin-right: auto; margin-bottom: 30px; font-size: 30px; font-weight: bold;;">{{SecondOfferPrice}}&euro;</h1>
+						<div id="modalThree" class="modal">
+							<div class="modal-content">
+							  <div class="contact-form">
+								<a class="close">&times;</a>
+								<form action="{% url 'home' %}" method="post">
+									{% csrf_token %}
+								  <h2>Book Now</h2>
+								  <div>
+									<input class="fname" type="text" name="Full_Name" placeholder="Full name"required>
+									<input type="text" name="Email" placeholder="Email" required>
+									<input type="text" name="Phone_Number" placeholder="Phone number" required><br>
+									<p>Select a activity</p>
+									<select style = "color:rgb(0, 0, 0)" name="Activity" id="Activity" required>
+										
+										<option value="Pansion_Neretva">Pansion Neretva</option>
+										<option value="Quad_Advantures">Quad Advantures</option>
+										<option value="Rafting_With_Breakfast" >Rafting with breakfast</option>
+										<option value="Rafting_With_Lunch" selected>Rafting with breakfast and lunch</option>
+										<option value="Mini_rafting">Mini Rafting</option>
+										
+									  </select><br>
+									<p>please enter for how many people you are reserving</p>
+									<input style = "color:rgb(80, 79, 79)"type="number" id="number_of_people" name="number_of_people"min="1"required>
+									<label for="arrival">arrival:</label>
+									<input style = "color:rgb(80, 79, 79)"type="date" id="arrival" name="arrival" required>
+								  </div>
+								  <span>Message</span>
+								  <div>
+									<textarea  name= "message" id="message"rows="2"></textarea>
+								  </div>
+								  <button type="submit">Submit</button>
+								</form>
+							  </div>
+							</div>
+						  </div>
+						  <a class="button fit primary" href="rafting.html">Open Gallery</a>
+						<a class="button fit primary" data-modal="modalThree">Book now</a></li>
+						<li  style=" border-style: inset;  border: 5px solid #2e3842;
+						border-radius: 5px;"class="icon solid fa-water">
+							<h3>{{ThirdOfferTitle}}</h3>
+							<p >{{ThirdOfferContent1}}<br>
+								{{ThirdOfferContent2}}<br>
+								{{ThirdOfferContent3}}<br>
+								{{ThirdOfferContent4}}<br>
+								{{ThirdOfferContent5}} <br>
+								{{ThirdOfferContent6}}<br>
+								{{ThirdOfferContent7}}<br>
+								{{ThirdOfferContent8}}
+							</p>			<h1 style="text-align: right;margin-right: auto; margin-bottom: 30px; font-size: 30px; font-weight: bold;;">{{ThirdOfferPrice}}&euro;</h1>
+							<div id="modalFour" class="modal">
+								<div class="modal-content">
+								  <div class="contact-form">
+									<a class="close">&times;</a>
+									<form action="{% url 'home' %}" method="post">
+										{% csrf_token %}
+									  <h2>Book Now</h2>
+									  <div>
+										<input class="fname" type="text" name="Full_Name" placeholder="Full name"required>
+										<input type="text" name="Email" placeholder="Email" required>
+										<input type="text" name="Phone_Number" placeholder="Phone number" required><br>
+										<p>Select a activity</p>
+										<select style = "color:rgb(0, 0, 0)" name="Activity" id="Activity" required>
+											
+											<option value="Pansion_Neretva">Pansion Neretva</option>
+											<option value="Quad_Advantures">Quad Advantures</option>
+											<option value="Rafting_With_Breakfast" >Rafting with breakfast</option>
+											<option value="Rafting_With_Lunch">Rafting with breakfast and lunch</option>
+											<option value="Mini_rafting" selected>Mini Rafting</option>
+											
+										  </select><br>
+										<p>please enter for how many people you are reserving</p>
+										<input style = "color:rgb(80, 79, 79)"type="number" id="number_of_people" name="number_of_people"min="1"required>
+										<label for="arrival">arrival:</label>
+										<input style = "color:rgb(80, 79, 79)"type="date" id="arrival" name="arrival" required>
+									  </div>
+									  <span>Message</span>
+									  <div>
+										<textarea  name= "message" id="message"rows="2"></textarea>
+									  </div>
+									  <button type="submit">Submit</button>
+									</form>
+								  </div>
+								</div>
+							  </div>
+							  <a class="button fit primary" href="rafting.html">Open Gallery</a>
+							<a class="button fit primary" data-modal="modalFour">Book now</a></li>
+							<li  style=" border-style: inset;  border: 5px solid #2e3842;
+							border-radius: 5px;"class="icon solid fa-mountain">
+									<h3>{{FourthOfferTitle}}</h3>
+									<p >{{FourthOfferContent1}} <br>
+									 	{{FourthOfferContent2}} <br>
+										{{FourthOfferContent3}}<br>
+										{{FourthOfferContent4}} <br>
+										{{FourthOfferContent5}} <br>
+										{{FourthOfferContent6}}<br>
+										{{FourthOfferContent7}} <br>
+										{{FourthOfferContent8}}
+									</p>			<h1 style="text-align: right;margin-right: auto; margin-bottom: 30px; font-size: 30px; font-weight: bold;;">{{FourthOfferPrice}}&euro;</h1>
+								<div id="modalFive" class="modal">
+									<div class="modal-content">
+									  <div class="contact-form">
+										<a class="close">&times;</a>
+										<form action="{% url 'home' %}" method="post">
+											{% csrf_token %}
+										  <h2>Book Now</h2>
+										  <div>
+											<input class="fname" type="text" name="Full_Name" placeholder="Full name"required>
+											<input type="text" name="Email" placeholder="Email" required>
+											<input type="text" name="Phone_Number" placeholder="Phone number" required><br>
+											<p>Select a activity</p>
+											<select style = "color:rgb(0, 0, 0)" name="Activity" id="Activity" required>
+												
+												<option value="Pansion_Neretva">Pansion Neretva</option>
+												<option value="Quad_Advantures" selected>Quad Advantures</option>
+												<option value="Rafting_With_Breakfast" >Rafting with breakfast</option>
+												<option value="Rafting_With_Lunch">Rafting with breakfast and lunch</option>
+												<option value="Mini_rafting">Mini Rafting</option>
+												
+											  </select><br>
+											<p>please enter for how many people you are reserving</p>
+											<input style = "color:rgb(80, 79, 79)"type="number" id="number_of_people" name="number_of_people"min="1"required>
+											<label for="arrival">arrival:</label>
+											<input style = "color:rgb(80, 79, 79)"type="date" id="arrival" name="arrival" required>
+										  </div>
+										  <span>Message</span>
+										  <div>
+											<textarea  name= "message" id="message"rows="2"></textarea>
+										  </div>
+										  <button type="submit">Submit</button>
+										</form>
+									  </div>
+									</div>
+								  </div>
+								  <a class="button fit primary" href="quad.html">Open Gallery</a>
+								<a class="button fit primary" data-modal="modalFive">Book now</a></li>
+								<li  style="background-color: #2e38428c;  border-style: inset;  border: 5px solid #2e3842;
+								border-radius: 5px;"class="icon  solid fa-bed">
+									<h3>{{FifthOfferTitle}}}</h3>
+									<p >{{FifthOfferContent1}}<br>
+										{{FifthOfferContent2}} <br>
+										{{FifthOfferContent3}} <br>
+										{{FifthOfferContent4}}<br>
+										{{FifthOfferContent5}} <br>
+										{{FifthOfferContent6}} <br>
+										{{FifthOfferContent7}} <br>
+										{{FifthOfferContent8}}
+										<p></p><br>
+									</p>			<h1 style="text-align: right;margin-right: auto; margin-bottom: 30px; font-size: 30px; font-weight: bold;;">{{FifthOfferPrice}}&euro;</h1>
+									<div id="modalSix" class="modal">
+										<div class="modal-content">
+										  <div class="contact-form">
+											<a class="close">&times;</a>
+											<form action="{% url 'home' %}" method="post">
+												{% csrf_token %}
+											  <h2>Book Now</h2>
+											  <div>
+												<input class="fname" type="text" name="Full_Name" placeholder="Full name"required>
+												<input type="text" name="Email" placeholder="Email" required>
+												<input type="text" name="Phone_Number" placeholder="Phone number" required><br>
+												<p>Select a activity</p>
+												<select style = "color:rgb(0, 0, 0)" name="Activity" id="Activity" required>
+
+													<option value="Pansion_Neretva" selected >Pansion Neretva</option>
+													<option value="Quad_Advantures">Quad Advantures</option>
+													<option value="Rafting_With_Breakfast" >Rafting with breakfast</option>
+													<option value="Rafting_With_Lunch">Rafting with breakfast and lunch</option>
+													<option value="Mini_rafting">Mini Rafting</option>
+													
+												  </select><br>
+												<p>please enter for how many people you are reserving</p>
+												<input style = "color:rgb(80, 79, 79)"type="number" id="number_of_people" name="number_of_people"min="1"required>
+												<label for="arrival">arrival:</label>
+												<input style = "color:rgb(80, 79, 79)"type="date" id="arrival" name="arrival" required>
+											  </div>
+											  <span>Message</span>
+											  <div>
+												<textarea  name= "message" id="message"rows="2"></textarea>
+											  </div>
+											  <button type="submit">Submit</button>
+											</form>
+										  </div>
+										</div>
+									  </div>
+									  <a class="button fit primary" href="pansion.html">Open Gallery</a>
+									<a class="button fit primary" data-modal="modalSix">Book now</a></li>
+								
+					
+					
+				</ul>
+			</div>
+			<div id="contentframe" style="position:relative; top: 10px; left: 0px; ">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11339.38054049026!2d17.972154937341294!3d43.63814925234568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf26c2becbdec95c!2sPansion%20Neretva!5e1!3m2!1sen!2sba!4v1633573633764!5m2!1sen!2sba" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+			</div>
+		</section>
+
+		<!-- CTA -->
+		<section id="cta" class="wrapper style4">
+			<div class="inner">
+				<header>
+					<h2>{{FooterTitle}}</h2>
+					<p>{{FooterContent}}</p>
+					
+				</header>
+				<ul class="actions stacked">
+					  <div id="modalOne" class="modal">
+						<div class="modal-content">
+						  <div class="contact-form">
+							<a class="close">&times;</a>
+							<form action="{% url 'home' %}" method="post">
+								{% csrf_token %}
+							  <h2>Book Now</h2>
+							  <div>
+								<input class="fname" type="text" name="Full_Name" placeholder="Full name"required>
+								<input type="text" name="Email" placeholder="Email" required>
+								<input type="text" name="Phone_Number" placeholder="Phone number" required><br>
+								<p>Select a activity</p>
+								<select style = "color:rgb(0, 0, 0)" name="Activity" id="Activity" required>
+									
+									<option value="Pansion_Neretva">Pansion Neretva</option>
+									<option value="Quad_Advantures">Quad Advantures</option>
+									<option value="Rafting_Adrenaline">Rafting Adrenaline</option>
+									
+								  </select><br>
+								<p>please enter for how many people you are reserving</p>
+								<input style = "color:rgb(80, 79, 79)"type="number" id="number_of_people" name="number_of_people"min="1"required>
+								<label for="arrival">arrival:</label>
+								<input style = "color:rgb(80, 79, 79)"type="date" id="arrival" name="arrival" required>
+							  </div>
+							  <span>Message</span>
+							  <div>
+								<textarea  name= "message" id="message"rows="4"></textarea>
+							  </div>
+							  <button type="submit">Submit</button>
+							</form>
+						  </div>
+						</div>
+					  </div>
+					<li><a class="button fit primary" data-modal="modalOne">Book now</a></li>
+					<li><a href="#" class="button fit">to the top</a></li>
+					
+				</ul>
+				
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<ul class="icons">
+
+				<li><a href="https://www.facebook.com/search/top?q=rafting%20%22adrenaline%22%20neretva%20%26%20pansion%20neretva"target="_blank" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+				<li><a href="https://www.instagram.com/rafting_adrenaline_neretva/"target="_blank" class="icon brands fa-instagram fa"><span class="label">Instagram</span></a></li>
+	
+			</ul>
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script>
+		let modalBtns = [...document.querySelectorAll(".button")];
+		modalBtns.forEach(function(btn) {
+		  btn.onclick = function() {
+			let modal = btn.getAttribute('data-modal');
+			document.getElementById(modal)
+			  .style.display = "block";
+		  }
+		});
+		let closeBtns = [...document.querySelectorAll(".close")];
+		closeBtns.forEach(function(btn) {
+		  btn.onclick = function() {
+			let modal = btn.closest('.modal');
+			modal.style.display = "none";
+		  }
+		});
+		window.onclick = function(event) {
+		  if(event.target.className === "modal") {
+			event.target.style.display = "none";
+		  }
+		}
+	  </script>
+	<script src="{% static 'website/assets/js/jquery.min.js'%}"></script>
+	<script src="{% static 'website/assets/js/jquery.scrollex.min.js'%}"></script>
+	<script src="{% static 'website/assets/js/jquery.scrolly.min.js'%}"></script>
+	<script src="{% static 'website/assets/js/browser.min.js'%}"></script>
+	<script src="{% static 'website/assets/js/breakpoints.min.js'%}"></script>
+	<script src="{% static 'website/assets/js/util.js'%}"></script>
+	<script src="{% static 'website/assets/js/main.js'%}"></script>
+
+</body>
+
+</html>
